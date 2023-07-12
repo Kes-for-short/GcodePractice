@@ -1,0 +1,41 @@
+%
+O0009(contour 9, Kimberly Elise Shelton)
+(tool 1: 1/2' dia flat endmill, 3 flute)
+(x0 Y0 Is lower left corner, Z0 Is top of part)
+G90 G80 G40 G20
+T01 M06
+M01 (check the tool please)
+(tool 1: 1/2' dia flat endmill, 3 flute)
+M3 S2292 (3.82*300/.5)
+G00 G90 G55 X-1. Y-1. (p00)
+G43 H01 Z2. (25% rapid)
+Z.1 (5% rapid)
+M8
+G01 Z-.05 F17.19(full feed Is 34.38)
+G41 D01 X.10 F34.38 	(p01)
+G01 Y.85		(p02)
+G03 Y1.65 J.4		(p03)
+G01 Y2.199		(p04)
+G01 X.85 Y2.4		(p05)
+G01 X1.35		(p06)
+G03 X2.15 I.4		(p07)
+G01 X3.05		(p08)
+G02 X3.40 Y2.05 J-.35	(p09)
+G01 Y1.65		(p10)
+G03 Y.85 J-.4		(p11)
+G01 Y.392		(p12)
+G01 X2.5 Y.1		(p13)
+G01 X2.15		(p14)
+G03 X1.35 I-.4		(p15)
+G01 X.4			(p16)
+G02 X.1 Y.4 J.3		(p17)
+G03 X-.9 Y1.4 I-1.	(p18)
+G01 G40 X-1. 		(p19)
+G01 Z.1
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+M30
+%

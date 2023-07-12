@@ -1,0 +1,229 @@
+%
+O0012(Contour 12, Kimberly Elise Shelton)
+	(tool 1: .5" dia. Spot drill)
+	(tool 2: .3125" drill 	118 DPA)
+	(tool 3: .25" 	drill 	118 DPA)
+	(tool 4: .201" 	drill	118 DPA)
+	(tool 5: .302"	drill	118 DPA)
+	(tool 6: .5"	flat endmill, 3 Flute)
+	(tool 7: 3/8" 90 deg Chamfer mill Tip dia .070, 3 Flute)
+	(!!!!set Tool dia To .12!!!!)
+	(tool 20: 3" Facemill 6 Inserts)
+	(x0 Y0 Is lower left corner, Z0 Is Top of part)
+
+	(Face Material)
+G90 G80 G40 G20
+T20 M6
+M1 (verifez l'outil)
+	(tool 20: 3" Facemill 6 Inserts)
+M3 S1146 (900*3.82/3)
+G00 G90 G54 X-1.75 Y1.25
+G43 H20 Z2.
+G00 Z1.
+G01 Z0 F17.19 (full Feed Is 34.38)
+M8
+G01 X5.25 Y1.25 F34.38
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+M01 (verifez le Facade)
+
+	(Pilot Holes)
+G90 G80 G40 G20
+T1 M6
+M1(verifez l'outil)
+	(tool 1: .5" dia. Spot drill)
+M3 S1146(3.82*sfm/dia)
+
+G00 G90 G54 X.75 Y1.60
+G43 H1 Z2.
+M8
+	(.3125" Pilot Hole)
+G81 G99 R.1 Z-.1563 F11.46
+G80
+
+	(.300" Pilot Hole)
+G00 X2. Y1.3
+G81 G99 R.1 Z-.15 F11.46
+G80
+
+	(.201" Pilot Hole)
+G00 X1.2 Y.7
+G81 G99 R.1 Z-.1005 F11.46
+G80
+
+	(.302" Pilot Hole)
+G00 X2.5 Y.6
+G81 G99 R.1 Z-.151  F11.46
+G80
+
+G00 Z2.M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+M01 (check The pilots)
+
+	(Drill .3125" Hole)
+G90 G80 G40 G20
+T02 M6
+M1(verifez l'outil)
+	(tool 2: .3125" drill 	118 DPA)
+M3 S1833(3.82*sfm/dia)
+
+G00 G90 G54 X.75 Y1.60
+G43 H2 Z2.
+G00 Z.1 (5% Rapid)
+M08
+G83 G99 R.1 Z-.2438 Q.0938
+G80 G00 Z2.
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+	(Drill .25" Hole)
+G90 G80 G40 G20
+T3 M6
+M1(verifez l'outil)
+	(tool 3: .25" 	drill 	118 DPA)
+M3 S1910(3.82*sfm/dia)
+
+G00 G90 G54 X2. Y1.3
+G43 H3 Z2.
+G00 Z.1 (5% Rapid)
+M08
+G83 G99 R.1 Z-.29 Q.075
+G80 G00 Z2.
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+	(Drill .201" Hole)
+G90 G80 G40 G20
+T04 M6
+M1(verifez l'outil)
+	(tool 4: .201" 	drill	118 DPA)
+M3 S2850(3.82*sfm/dia)
+
+G00 G90 G54 X1.2 Y.7
+G43 H4 Z2.
+G00 Z.1  (5% Rapid)
+M08
+G83 G99 R.1 Z-.2403 Q.0603
+G80 G00 Z2. M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+	(Drill .302" Hole)
+G90 G80 G40 G20
+T05 M6
+M1(verifez l'outil)
+	(tool 5: .302"	drill	118 DPA)
+M3 S1897(3.82*sfm/dia)
+
+G00 G90 G54 X2.5 Y.6
+G43 H5 Z2.
+G00 Z.1  (5% Rapid)
+M08
+G83 G99 R.1 Z-.3406 Q.0906
+G80 G00 Z2.
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+	(Contour Time)
+G90 G80 G40 G20
+T06 M06
+M1(verifez l'outil)
+	(tool 6: .5" Flat endmill, 3 Flute)
+M03 S2292
+G00 G90 G54 X-1. Y-1.
+G43 H6 Z2.
+G00 Z.1
+M8
+G01 Z-.15 F17.19 (full Feed Is 34.38)
+
+	(left Side)
+G01 G41 D06 X.125 F34.38 (line up below First cut)
+G01 Y.97		(cut up To left Side arc)
+G03 Y1.53 J.28		(left Side CCW arc)
+G01 Y2.125		(linear cut up To Top left corner)
+
+	(top Side)
+G02 Y2.375 X.375 I.25	(top left CW arc)
+G01 X1.44		(linear cut up To Top Side arc)
+G03 X2.06 I.31		(top Side CCW arc)
+G01 X2.41		(linear cut up To Top Right angled corner)
+
+	(right Side)
+G01 X3.375 Y2.0238	(linear cut along 20 deg neg offset From Topside)
+G01 Y1.54		(linear cut down To Right Side CCW arc)
+G03 Y.96 J-.29		(right Side CCW arc)
+G01 Y.275		(linear cut up To bottom Right CW arc)
+
+	(bottom Side)
+G02 X3.225 Y.125 I-.15	(bottom Right CW arc)
+G01 X2.07		(cut up To edge of Fillet on bottom Side arc)
+G03 X1.43 I-.32		(cut bottom Side CCW Arc)
+G01 X.45		(linear cut up To bottom left corner)
+G01 X.125 Y.512		(angled cut along 50 deg angle offset From bottom Face)
+G03 X-.875 Y1.512 I-1.	(arc away From part)
+G01 G40 X-1.		(cancel cutter and move To end position)
+
+G00 Z2. M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+	(Chamfer Time)
+G90 G80 G40 G20
+T07 M06
+M1(verifez l'outil)
+			(tool 7: 3/8" 90 deg Chamfer mill Tip dia .070, 3 Flute)
+M03 S2292
+G00 G90 G54 X-1. Y-1.
+G43 H07 Z2.
+G00 Z.1
+M8
+G01 Z-.03 F17.19 	(full Feed Is 34.38)
+
+			(left Side)
+G01 G41 D07 X.125 F34.38 (line up below First cut)
+G01 Y.97		(cut up To left Side arc)
+G03 Y1.53 J.28		(left Side CCW arc)
+G01 Y2.125		(linear cut up To Top left corner)
+
+	(top Side)
+G02 Y2.375 X.375 I.25	(top left CW arc)
+G01 X1.44		(linear cut up To Top Side arc)
+G03 X2.06 I.31		(top Side CCW arc)
+G01 X2.41		(linear cut up To Top Right angled corner)
+
+	(right Side)
+G01 X3.375 Y2.0238	(linear cut along 20 deg neg offset From Topside)
+G01 Y1.54		(linear cut down To Right Side CCW arc)
+G03 Y.96 J-.29		(right Side CCW arc)
+G01 Y.275		(linear cut up To bottom Right CW arc)
+
+	(bottom Side)
+G02 X3.225 Y.125 I-.15	(bottom Right CW arc)
+G01 X2.07		(cut up To edge of Fillet on bottom Side arc)
+G03 X1.43 I-.32		(cut bottom Side CCW Arc)
+G01 X.45		(linear cut up To bottom left corner)
+G01 X.125 Y.512		(angled cut along 50 deg angle offset From bottom Face)
+G03 X-.875 Y1.512 I-1.	(arc away From part)
+G01 G40 X-1.		(cancel cutter and move To end position)
+
+G00 Z2. M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+M30
+%

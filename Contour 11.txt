@@ -1,0 +1,219 @@
+%
+O0011(ConTour 11, Kimberly Elise ShelTon)
+	(Tool 1: 1/2" dia. SpoT drill)
+	(Tool 2: 1/4" Drill 118 DPA)
+	(Tool 3: .201" Drill 118 DPA)
+	(Tool 4: .187" Drill 118 DPA)
+	(Tool 5: .302" Drill 118 DPA)
+	(Tool 6: 1/2" dia. FlaT endmill, 3 FluTe)
+	(Tool 7: 3/8" 90 deg Chamfer mill Tip dia .070, 3 FluTe)
+	(!!!!set tool dia to .12!!!!)
+	(Tool 20: 3" facemill 6 inserts)
+	(x0 Y0 Is lowerleft corner, Z0 Is Top of part)
+
+	(Face MaTerial)
+G90 G80 G40 G20
+T20 M6
+M1(now is your opportunity to ensure the tool is,)
+	(in fact, a 3" facemill wiTh 6 inserts)
+	(please do So wiTh utmost haste)
+	(tool 20: 3" facemill 6 inserts)
+M3 S1146 (900*3.82/3)
+G00 G90 G54 X-1.75 Y1.25
+G43 H20 Z2. 
+G00 Z.1
+G01 Z0 F17.19 (full feed 34.38)
+M8 (cool IT down now)
+G01 X5.25 Y1.25 F34.38
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+M01 (check part For 100 percent cleanup)
+
+	(pilot hole drilling)
+G90 G80 G40 G20
+T1 M6 (tool 1: 1/2" dia. spot drill)
+M1 (check The tool)
+	(tool 1: 1/2" dia. spot drill)
+M3 S1146
+G00 G90 G54 X.625 Y1.75
+G43 Z2. H01
+M8
+
+	(.25 dia piloT)
+G81 G99 R.1 Z-.125 F11.46 X.625 Y1.75 
+G80 
+
+	(.201 dia piloT)
+G00 X1.125 Y.8125
+G81 G99 R.1 Z-.1005 F11.46
+G80 
+
+	(.1875 dia piloT)
+G00 X2.125 Y1.5
+G81 G99 R.1 Z-.0937 F11.46
+G80
+
+	(.302 dia piloT)
+G00 X2.625 Y.625
+G81 G99 R.1 Z-.151 F11.46
+G80
+
+G00 Z2.
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+M01 (check Pilot holes)
+
+	(1/4" drilling Holes)
+G90 G80 G40 G20
+M06 T2
+M01(be certain that the tool Is correct)
+(tool 2: 1/4" drill 118 dpa)
+M03 S2292
+G00 G90 G54 X.625 Y1.75
+G43 H2 Z2.
+G00 Z.1
+M08
+G83 G99 R.1 Z-.225 F11.46 Q.075 X.625 Y1.75
+G80
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+	(0.201" drilling Holes)
+G90 G80 G40 G20
+M06 T3
+M01(be cerTain ThaT The Tool Is correcT)
+(Tool 3: .201" Drill 118 DPA)
+M03 S2851
+G00 G90 G54 X1.125 Y.8125
+G43 H3 Z2.
+G00 Z.1 (5% Rapid)
+M08
+G83 G99 R.1 Z-.2103 F11.46 Q.06 X1.125 Y.8125
+G80
+G00 Z2. (25% Rapid)
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+	(0.187" drilling Holes)
+G90 G80 G40 G20
+M06 T4
+M01(be cerTain ThaT The Tool Is correcT)
+(Tool 4: .187" Drill 118 DPA)
+M03 S3056
+G00 G90 G54 X2.125 Y1.5
+G43 H4 Z2.
+G00 Z.1 (5% Rapid)
+M08
+G83 G99 R.1 Z-.2063 F11.46 Q.056 X2.125 Y1.5
+G80
+G00 Z2. (25% Rapid)
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+	(0.187" drilling Holes)
+G90 G80 G40 G20
+M06 T5
+M01(be cerTain ThaT The Tool Is correcT)
+(Tool 5: .302" Drill 118 DPA)
+M03 S1897
+G00 G90 G54 X2.625 Y.625
+G43 H5 Z2.
+G00 Z.1 (5% Rapid)
+M08
+G83 G99 R.1 Z-.2406 F11.46 Q.091 X2.625 Y.625
+G80
+G00 Z2. (25% Rapid)
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+	(ConTour Time!)
+G90 G80 G40 G20
+M6 T6
+M1 (check The Tool please)
+	(Tool 6: 1/2" dia. FlaT endmill, 3 FluTe)
+S2292 M3(3.82*300/.5)
+G0 G90 G54 X-1. Y-1.(25% Rapid)
+G43 H6 Z2.
+G00 Z.1 (5% Rapid)
+M8
+G01 Z-.1 F17.19	(full feed Is 34.38)
+G01 G41 D06 X.125 F34.38	(in line wiTh starting cuT)
+G01 Y.95 		(cuT up Toleft Side arc)
+G03 Y1.55 J.3 		(lefT Side CCW arc)
+G01 Y1.625 		(cuT up To Topleft angled corner)
+G01 X.326 Y2.375	(angled cuT up To Top Side)
+G01 X1.375		(cuT up To Top Side arc)
+G03 X2.125 I.375 	(Top Side CCW arc)
+G01 X3.			(cuT up To Top right corner)
+G02 X3.375 Y2. J-.375	(right Side CW arc)
+G01 Y1.55		(cuT up To right Side arc)
+G03 Y.95 J-.3		(right Side CCW arc)
+G01 Y.5			(cuT up To boTTom right angled corner)
+G01 X3.295 Y.125	(angled cuT down To boTTom Side)
+G01 X2.125		(cuT up To boTTom Side arc)
+G03 X1.375 I-.375	(boTTom Side CCW arc)
+G01 X.375		(cuT up To boTTomleft corner)
+G02 X.125 Y.375 J.25	(boTTomleft CW arc)
+G03 X-.875 Y1.375 I-1.	(arc away From parT)
+G01 G40 X-1.		(end posiTion away From parT)
+G00 Z2. (25% Rapid)
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+M1 (check The conTour please)
+
+	(Chamfer Time!)
+G90 G80 G40 G20
+M6 T7
+M1 (check The Tool please)
+	(Tool 7: 3/8" 90 deg Chamfer mill Tip dia .070, 3 FluTe)
+G0 G90 G54 X-1. Y-1. (25% Rapid)
+M03 S7000
+G43 H7 Z2.
+G00 Z.1 (5% Rapid)
+M8
+G01 Z-.03 F17.19 	(full feed Is 34.38)
+G01 G41 D07 X.125 F34.38	(in line wiTh starting cuT)
+G01 Y.95 		(cuT up Toleft Side arc)
+G03 Y1.55 J.3 		(lefT Side CCW arc)
+G01 Y1.625 		(cuT up To Topleft angled corner)
+G01 X.326 Y2.375	(angled cuT up To Top Side)
+G01 X1.375		(cuT up To Top Side arc)
+G03 X2.125 I.375 	(Top Side CCW arc)
+G01 X3.			(cuT up To Top right corner)
+G02 X3.375 Y2. J-.375	(right Side CW arc)
+G01 Y1.55		(cuT up To right Side arc)
+G03 Y.95 J-.3		(right Side CCW arc)
+G01 Y.5			(cuT up To boTTom right angled corner)
+G01 X3.295 Y.125	(angled cuT down To boTTom Side)
+G01 X2.125		(cuT up To boTTom Side arc)
+G03 X1.375 I-.375	(boTTom Side CCW arc)
+G01 X.375		(cuT up To boTTomleft corner)
+G02 X.125 Y.375 J.25	(boTTomleft CW arc)
+G03 X-.875 Y1.375 I-1.	(arc away From parT)
+G01 G40 X-1.		(end posiTion away From parT)
+G00 Z2. (25% Rapid)
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+M30
+%

@@ -1,0 +1,365 @@
+%
+O0013	(Contour 13, Kimberly Elise Shelton)
+	(Tool 01: .5" Flat endmill, 3 Flute)
+	(Tool 02: .5" Spotdrill, 90 Deg)
+	(Tool 03: .302" Drill 118 Deg)
+	(Tool 04: .313" Reamer)
+	(Tool 05: .201" Drill 118 Deg)
+	(Tool 06: .213" Reamer)
+	(Tool 07: .281" 118 Deg)
+	(Tool 08: .25 Drill 118 Deg)
+	(Tool 09: .3125 Flat endmill, 3 Flute)
+	(Tool 10: .1875 Flat endmill, 3 Flute)
+	(tool 11: 3/8" use .12 90 Deg Chamfer mill Tip Dia .070, 3 Flute)
+	(Tool 20: 3 In Facemill)
+	(x0 Y0 Is lower left corner, Z0 Is Top of part)
+
+			(face material)
+G90 G80 G40 G20
+M06 T20
+M1 			(check Your Tool babe ;)
+			(Tool 20: 3 In Facemill)
+M03 S1146 		(900*3.82/3)
+G00 G90 G54 X-1.75 Y1.25
+G43 H20 Z2.
+G00 Z1.
+G01 Z0 F17.19 		(half of Full Feed, 34.38)
+M08
+G01 X5.25 F34.38
+G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(Machine Contour)
+G90 G80 G40 G20
+M06 T01
+M1 			(check Tool and Face of part)
+			(Tool 01: .5" Flat endmill, 3 Flute)
+M03 S1146
+
+G00 G90 G54 X-1. Y-1.
+G43 H1 Z2.
+G00 Z.1
+G01 Z-.15 F17.19 	(full Feed Rate Is 34.38)
+
+			(left Side)
+G01 G41 D1 X.125 F34.38 (line up below left Side cut)
+G01 Y.95 		(cut up To Start of left Side arc)
+G03 Y1.55 J.3		(CCW left Side arc cut)
+G01 Y2.175		(linear cut up To Top left Side arc)
+G02 X.325 Y2.375 I.2	(top left CW arc cut)
+
+			(top Side)
+G01 X1.47		(linear cut up To Top Side arc)
+G03 X2.03 I.28		(top Side CCW arc cut)
+G01 X2.5		(linear cut up To Top Side angle cut)
+G01 X3.375 Y2.1568	(linear cut along 14 Deg offset From Top Side)
+
+			(right Side)
+G01 Y1.57		(linear cut up To Right Side arc)
+G03 Y.93 J-.32		(right Side CCW arc cut)
+G01 Y.425		(linear cut up To bottom Right corner)
+
+			(bottom Side)
+G02 X3.075 Y.125 I-.3	(bottom Right Side CW arc)
+G01 X2.04		(cut up To bottom Side arc)
+G03 X1.46 I-.29		(bottom Side CCW arc cut)
+G01 X.725		(linear cut up To bottom left angled cut)
+G01 X.125 Y.3439	(linear cut along 20 Deg bottom Right angle)
+G03 X-.875 Y1.3439 I-1.	(CCW arc away From part)
+G01 G40 X-1.		(linear move To end cancel cutter comp)
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(Machine Chamfer)
+G90 G80 G40 G20
+M06 T11
+M1 			(check Tool and Contour)
+			(tool 11: 3/8" use .12 90 Deg Chamfer mill Tip Dia .070, 3 Flute)
+M03 S3056
+
+G00 G90 G54 X-1. Y-1.
+G43 H11 Z2.
+G00 Z.1
+G01 Z-.03 F17.19 	(full Feed Rate Is 34.38)
+
+			(left Side)
+G01 G41 D11 X.125 F34.38(line up below left Side cut)
+G01 Y.95 		(cut up To Start of left Side arc)
+G03 Y1.55 J.3		(CCW left Side arc cut)
+G01 Y2.175		(linear cut up To Top left Side arc)
+G02 X.325 Y2.375 I.2	(top left CW arc cut)
+
+			(top Side)
+G01 X1.47		(linear cut up To Top Side arc)
+G03 X2.03 I.28		(top Side CCW arc cut)
+G01 X2.5		(linear cut up To Top Side angle cut)
+G01 X3.375 Y2.1568	(linear cut along 14 Deg offset From Top Side)
+
+			(right Side)
+G01 Y1.57		(linear cut up To Right Side arc)
+G03 Y.93 J-.32		(right Side CCW arc cut)
+G01 Y.425		(linear cut up To bottom Right corner)
+
+			(bottom Side)
+G02 X3.075 Y.125 I-.3	(bottom Right Side CW arc)
+G01 X2.04		(cut up To bottom Side arc)
+G03 X1.46 I-.29		(bottom Side CCW arc cut)
+G01 X.725		(linear cut up To bottom left angled cut)
+G01 X.125 Y.3439	(linear cut along 20 Deg bottom Right angle)
+G03 X-.875 Y1.3439 I-1.	(CCW arc away From part)
+G01 G40 X-1.		(linear move To end cancel cutter comp)
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+			(Pilot Hole Drilling)
+G90 G80 G40 G20
+M06 T2
+M1			(check The Tool and Chamfer)
+			(Tool 02: .5" Spotdrill, 90 Deg)
+M03 S1146
+G00 G90 G54 X.75 Y1.75
+G43 H2 Z2.
+Z.1
+M08
+
+
+G81 G99 R.1 Z-.1565 F11.46(.313" Pilot Hole)
+
+G80 G00 X.875 Y.625 (.281 pilot hole)
+G81 G99 R.1 Z-.141 F11.46
+
+G80 G00 X2.5 Y2.	(.213" pilot Hole)
+G81 G99 R.1 Z-.107 F11.46
+
+G80 G00 X2.75 Y.5	(.25" pilot Hole)
+G81 G99 R.1 Z-.125 F11.46
+
+G80 G00 Z2. M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(top left Hole predrill)
+G90 G80 G40 G20
+T3 M6
+M1			(check The Tool and Pilots)
+			(Tool 03: .302" Drill 118 Deg)
+S1897 M3
+G00 G90 G54 X.75 Y1.75
+G43 H3 Z2.
+Z.1
+
+M08
+G83 G99 R.1 Z-.867 Q.0906 F11.46
+G80 G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(Top Left Hole Ream)
+G90 G80 G40 G20
+T4 M6
+M1			(check The Tool and Hole)
+			(Tool 04: .313" Reamer)
+S915 M3
+G00 G90 G54 X.75 Y1.75
+G43 H4 Z2.
+Z.1
+
+M08
+G85 G99 R.1 Z-.825 F22.92
+G80 G00 Z2. 
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(Drill Top Right Hole)
+G90 G80 G40 G20
+T5 M06
+M1			(Check The Tool and Top left Hole Reamed)
+			(Tool 05: .201" Drill 118 Deg)
+S2851 M03
+G00 G90 G54 X2.5 Y2.
+G43 H5 Z2.
+Z.1
+M8
+G83 G99 R.1 Z-.8353 Q.0603 F11.46
+G80 G00 Z2. 
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(Ream Top Right Hole)
+G90 G80 G40 G20
+M06 T6
+M1			(check The Tool and Top Right Hole)
+			(Tool 06: .213" Reamer)
+M03 S1345
+G00 G90 G54 X2.5 Y2.
+G43 H6 Z2.
+Z.1
+M08
+G85 G99 R.1 Z-.805 F22.92
+G80 G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(bottom left Hole Drill)
+G90 G80 G40 G20
+M06 T7
+M1 			(check The Tool and Top Right Reamed Hole)
+			(Tool 07: .281" 118 Deg)
+S2039 M03
+G00 G90 G54 X.875 Y.625
+G43 H7 Z2.
+Z.1
+
+M08
+G83 G99 R.1 Z-.3343 Q.084 F11.46
+G80 G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(.25" Drilled Hole)
+G90 G80 G40 G20
+M06 T8
+M1 			(Check Tool and bottom left Hole)
+			(Tool 08: .25 Drill 118 Deg)
+S2292 M03
+G00 G90 G54 X2.75 Y.5
+G43 Z.2 H8
+Z.1
+M08
+G83 G99 R.1 Q.075 Z-.255 F11.46 X2.75 Y.5
+G80 G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(roughing pass on Slot)
+G90 G80 G40 G20
+M06 T9
+M01 			(check The Tool and Drilled Holes)
+			(Tool 09: .3125 Flat endmill, 3 Flute)
+M03 S3667
+G00 G90 G54 X1.5 Y1.25
+G43 H9 Z2.
+G01 Z.01 F17.19 	(full Feed Is 34.38)
+G01 X1.5 Z-.05		(begin Decent Into Slot)
+G01 X2. Z-.1
+G01 X1.5 Z-.15
+G01 X2. Z-.2
+G01 X1.5 Z-.25
+G01 X2. Z-.3
+G01 X1.5 Z-.35
+G01 X2.			(flatten bottom of Slot)
+G01 Z.1 		(feed out of part)
+G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+
+			(finishing pass on Slot)
+G90 G80 G40 G20
+M06 T10
+M01			(check The Tool and The Rough Slot)
+			(Tool 10:.1875 Flat endmill, 3 Flute)
+M3 S6112
+G00 G90 G54 X1.875 Y1.25
+G43 Z2. H10
+G00 Z.1
+M08
+
+					(first pass)
+G01 Z-.0938 F17.19
+G01 G41 D10 X1.875 Y1.3125 F34.38 	(p1 Finish Slot)
+G03 X1.75 Y1.4375 I-.125 		(p2 Finish Slot)
+G01 X1.375 Y1.4375
+G03 Y1.0625 J-.1875
+G01 X2.125
+G03 Y1.4375 J.1875
+G01 X1.75 Y1.4375
+G03 X1.625 Y1.3125 J-.125
+G01 X1.625 Y1.25 G40
+G01 Z.1
+G00 X1.875 Y1.25
+
+					(second Finishing pass)
+G01 Z-.1875 F17.19
+G01 G41 D10 X1.875 Y1.3125 F34.38 	(p1 Finish Slot)
+G03 X1.75 Y1.4375 I-.125 		(p2 Finish Slot)
+G01 X1.375 Y1.4375
+G03 Y1.0625 J-.1875
+G01 X2.125
+G03 Y1.4375 J.1875
+G01 X1.75 Y1.4375
+G03 X1.625 Y1.3125 J-.125
+G01 X1.625 Y1.25 G40
+G01 Z.1
+G00 X1.875 Y1.25
+
+					(third Finishing pass)
+G01 Z-.281 F17.19
+G01 G41 D10 X1.875 Y1.3125 F34.38 	(p1 Finish Slot)
+G03 X1.75 Y1.4375 I-.125 		(p2 Finish Slot)
+G01 X1.375 Y1.4375
+G03 Y1.0625 J-.1875
+G01 X2.125
+G03 Y1.4375 J.1875
+G01 X1.75 Y1.4375
+G03 X1.625 Y1.3125 J-.125
+G01 X1.625 Y1.25 G40
+G01 Z.1
+G00 X1.875 Y1.25
+
+					(forth Finishing pass)
+G01 Z-.375 F17.19
+G01 G41 D10 X1.875 Y1.3125 F34.38 	(p1 Finish Slot)
+G03 X1.75 Y1.4375 I-.125 		(p2 Finish Slot)
+G01 X1.375 Y1.4375
+G03 Y1.0625 J-.1875
+G01 X2.125
+G03 Y1.4375 J.1875
+G01 X1.75 Y1.4375
+G03 X1.625 Y1.3125 J-.125
+G01 X1.625 Y1.25 G40
+G01 Z.1
+G00 X1.375 Y1.25
+
+G01 Z-.375 F17.19
+G01 X2.125
+Z.1
+G00 Z2. 
+M09
+M05
+G28 G91 Z0
+G28 G91 Y0
+
+M30
+%

@@ -1,0 +1,27 @@
+%
+O0001 (Contour 1, Kimberly Shelton)
+G90 G80 G40 G20
+
+T01 M06 (3/4' flat endmill, 3 flute)
+M011 (check tool)
+(3/4' flat endmill, 3 flute)
+S1528 M03
+G0 G90 G54 X-1. Y-1. (start position)
+G43 Z2. H01
+G0 Z.1
+M8
+G1 Z-.05 F17.19 
+G1 G41 D01 X.25 Y-.1 F34.38 (position 1)
+X.25 Y2.25 (position 2)
+X3.25 Y2.25 (position 3)
+X3.25 Y.25 (position 4)
+X-.5 Y.25 (position 5)
+G01 X-.75 Y.25 G40 (End Position)
+G01 Z.1 
+G00 Z2.
+
+M5
+M9 G28 G91 Z0
+G28 G91 Y0
+M30
+%

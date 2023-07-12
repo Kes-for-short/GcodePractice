@@ -1,0 +1,38 @@
+%
+O0004(contour 4, Kimberly Elise Shelton)
+(tool 1: 1/2 Inch Flat endmill, 3 Flute)
+(x0 Y0 Is lower left corner, Z0 Is top of part)
+G90 G80 G40 G20
+T01 M6
+M1(check the tool)
+(tool 1: 1/2 Inch Flat endmill, 3 Flute)
+S2292 M03 (3.82*300/.5)
+G0 G90 G54 X-1. Y-1. (Starting Point)
+G43 H1 Z2. (25% rapid)
+Z.1 (5% rapid)
+M8
+G1 G41 Z-.05 X.2 Y-1. F17.19(p1)
+G1 D01 Y.75 F34.38	(p2)
+G3 Y1.75 I0 J.5		(p3)
+G1 Y1.925 		(p4)
+G2 X.575 Y2.3 I.375 	(p5)
+G1 X1.25		(p6)
+G3 X2.25 I.5		(p7)
+G1 X2.925		(p8)
+G2 X3.3 Y1.925 J-.375	(p9)
+G1 Y1.75		(p10)
+G3 Y.75 J-.5		(p11)
+G1 Y.575		(p12)
+G2 X2.925 Y.2 I-.375	(p13)
+G1 X2.25		(p14)
+G3 X1.25 I-.5		(p15)
+G1 X.575		(p16)
+G2 X.2 Y.575 J.375	(p17)
+G3 X-.8 Y1.575 I-1.	(p18)
+G1 G40 X-1.		(ep)
+G0 Z2. M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+M30
+%

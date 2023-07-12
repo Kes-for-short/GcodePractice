@@ -1,0 +1,43 @@
+%
+O0010 (Contour 10, Kimberly Elise Shelton)
+(tool 1: 1/2" flat endmill, 3 flute)
+G90 G80 G40 G20
+T01 M06
+M01 (do me a favor and make sure that the)
+(tool is the right tool please)
+(and not the wrong tool because that)
+(would ruin the entire part and be Your fault)
+(tool 1: 1/2" flat endmill, 3 flute)
+M03 S2292 (3.82*300/.5)
+G00 G90 G54 X-1. Y-1. (p00)
+G43 H01 Z2. (25% rapid)
+Z.1 (5% rapid)
+M08
+G01 Z-.05 F17.19(.01*.5*2292*3 full feed is 34.38)
+G41 D01 X.10 F34.38	(colinear with first cut)
+G01 Y.95		(linear cut up to first arc)
+G03 Y1.55 J.3		(left side CCW arc)
+G01 Y2.			(linear cut up to top left corner)
+G02 Y2.4 X.5 I.4	(top left CW corner arc)
+G01 X1.4		(linear cut up to top side arc)
+G03 X2.1 I.35		(top side CCW arc)
+G01 X3.142		(linear cut up to 164 deg corner)
+G01 X3.4 Y1.6		(linear cut along 16 deg offset from right edge)
+G01 Y1.55		(linear cut up to right side arc)
+G03 Y.95 J-.3		(Right side CCW arc)
+G01 Y.4			(linear cut up to start of bottom right corner)
+G02 X3.1 Y.1 I-.3	(bottom right CW corner arc)
+G01 X2.15		(linear cut up to bottom side arc)
+G03 X1.35 I-.4		(bottom side CCW arc)
+G01 X.327		(linear cut up to 162 deg corner)
+G01 X-.327 Y1.2		(linear cut along 18 deg offset from right side)
+(G03 X-.9 Y1.7 i-1.	CCW arc away from part on right side)
+G01 G40 X-1.		(linear move to end point, turn off cutter comp)
+G01 Z.1
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+M30
+%

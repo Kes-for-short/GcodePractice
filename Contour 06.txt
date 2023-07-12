@@ -1,0 +1,65 @@
+%
+O0006(Contour 6, Kimberly Elise Shelton)
+(tool 7: .375" Dia. .70" Dia tip 90 Deg chamfer mill)
+(!!!! set .12 For the tool Diameter!!!!)
+(tool 9: 3/4' Dia Flat endmill, 3 Flute)
+(x0, Y0 is lower left corner Z0 is top of part)
+G90 G80 G40 G20
+T09 M6
+M01 (Check the tool)
+(tool 9: 3/4' Dia Flat endmill, 3 Flute)
+S1528 M3 (3.82*3/.75)
+G0 G90 G55 X-1. Y-1. (starting point)
+G43 H09 Z2. (25% rapid)
+Z.1 (5% rapid)
+M8
+G01 Z-.05 F17.19 (full Feed is 34.38 moving to cut Depth)
+G41 D9 X.25 Y-1. F34.38 (p1)
+G01 X.25 Y2.0063
+G01 X1. Y2.25
+G01 X2.1225
+G01 X3.25 Y1.8128
+G01 X3.25 Y.5514
+G01 X2.125 Y.25
+G01 X.75 Y.25
+G01 X.25 Y.4320
+G03 X-.75 Y1.4320 I-1. 
+G01 X-1. G40
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+
+(Chamfer Time!)
+(tool 7: .375" Dia. .70" Dia tip 90 Deg chamfer mill)
+G90 G80 G40 G20
+T09 M6
+M01 (Check the tool)
+(tool 7: .375" Dia. .70" Dia tip 90 Deg chamfer mill)
+S3056 M3 (3.82*300/.375)
+G0 G90 G55 X-1. Y-1. (starting point)
+G43 H07 Z2. (25% rapid)
+Z.1 (5% rapid)
+M8
+G01 Z-.030 F17.19 (full Feed is 34.38 moving to cut Depth)
+G41 D7 X.25 Y-1. F34.38 (p1)
+G01 X.25 Y2.0063
+G01 X1. Y2.25
+G01 X2.1225
+G01 X3.25 Y1.8128
+G01 X3.25 Y.5514
+G01 X2.125 Y.25
+G01 X.75 Y.25
+G01 X.25 Y.4320
+G03 X-.75 Y1.4320 I-1. 
+G01 X-1. G40
+G00 Z2.
+M9
+M5
+G28 G91 Z0
+G28 G91 Y0
+
+M30
+%
