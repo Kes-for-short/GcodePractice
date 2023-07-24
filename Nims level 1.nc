@@ -13,6 +13,13 @@ O0015   (Nims Machining Skills level 1)
         (tool 10:.1875 flat endmill 3 flute)
         (tool 20:3in facemill)
 
+
+
+
+(You can do this)
+
+
+
 (facing pass)
 G90 G80 G40 G20
 M06 T20
@@ -70,7 +77,7 @@ G28 G99 Y0
     (pilot hole party)
 G90 G80 G40 G20
 M06 T02
-M01 (gatekeep girlboss tool-check ;)
+M01 (gatekeep, gaslight, tool-check ;)
         (tool 2:.5 spotdrill 90 degree)
 M03 S1146
 G00 G90 G54 X.650 Y1.850
@@ -112,7 +119,7 @@ G90 G80 G40 G20
 M06 T04
 M01 (check out that tool! and maybe the pilot holes)
         (tool 4:.313 reamer)
-M03 S949
+M03 S915
 G00 G90 G54 X.650 Y1.850
 G43 H3 Z2. M08
 
@@ -142,16 +149,22 @@ G90 G80 G40 G20
 M06 T05
 M01 (check you tool and that hoe)
         (tool 6:.213 reamer)
-M03 S2851
+M03 S1345
 G00 G90 G54 X2.5 Y1.5
 G43 H03 Z2. M08
 
-G85 G99 R.1 Z-.875 F11.46
+G85 G99 R.1 Z-.875 F22.92
 G80 G00 Z2. M09
 G28 G91 Z0 G40 M05
 G28 G91 Y0
 
 
+    (rough that slot)
+G90 G80 G40 G20
+M06 T09
+M01 (check the tool and reamed whole)
+        (tool 9:.3125 flat endmill 3 flute)
+M03 S3667
 
 
 
