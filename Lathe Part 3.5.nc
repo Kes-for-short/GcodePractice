@@ -1,0 +1,70 @@
+%
+O0006 (Lathe Project 3.5, Kimberly Elise Shelton)
+(tool 1: 80 deg .031TNR)
+(tool 3, 35 deg .15 TNR)
+
+G28 G00 U0 W0
+T101 (tool 1: 80 deg .031TNR)
+
+G50 S3000 (max rpm)
+G97 S1000 M03 (Spindle On 1000 rpm)
+
+    (time to face the music)
+G00 G54 Z.15
+G00 X2.5 Z.15 M08
+G96 S1100 (css)
+G01 Z0. F.005 (slow for a pretty face)
+G01 X-.062
+G00 Z.15
+X2.5
+G28 U0 M09
+G28 W0
+M01
+
+    (Rough 'em up boys!)
+G28 G00 U0 W0
+T101 (tool 1: 80 deg .031TNR)
+G50 S3000 (max rpm again)
+G97 S1000 M03 (Spindle On 1000 rpm)
+G00 G54 Z.15
+G00 X2.5 Z.15 M08
+G96 S1100 (css is BACK baby)
+G71 P100 Q200 U.01 W.005 D.025 F.012
+N100 G00 X.45 Z.15
+G01 X.45 Z.1 G42
+G01 X.85 Z-.1
+G01 X.85 Z-.38
+G02 X.99 Z-.45 R.07
+G01 X1.09 Z-.45
+G03 X1.25 Z-.53 R.08
+G01 X1.25 Z-.85
+G02 X1.35 Z-.90 R.05
+G01 X1.73 Z-.90
+G03 X1.85 Z-.96 R.06
+G01 X1.85 Z-1.36
+G02 X1.93 Z-1.40 R.04
+G01 X2.05 Z-1.40
+G01 X2.25 Z-1.50
+G01 X2.5 Z-1.50
+N200 G00 X2.55 Z-1.50 G40
+
+G28 U0 M09
+G28 W0
+M01 (check the rough pass)
+
+
+    (finishing pass)
+G28 G00 U0 W0
+
+T303 (tool 3, 35 deg .15 TNR)
+G50 S3000
+G97 S1000 M03
+G00 G54 Z.15
+G00 X2.5 M08
+G96 S1100
+G70 P100 Q200 F.005
+G28 U0 M09
+G28 W0
+M30
+
+%

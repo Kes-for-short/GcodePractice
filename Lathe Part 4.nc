@@ -1,0 +1,63 @@
+%
+O0009 (Lathe Part 4.5, Kimberly Elise Shelton)
+(tool 1: 80 deg .031TNR)
+(tool 3, 35 deg .15 TNR)
+
+G28 G00 U0 W0
+T101 (tool 1: 80 deg .031TNR)
+
+G50 S3000
+G97 S1000 M03
+
+    (facing op.)
+G00 G54 Z.15
+G00 X2.5 Z.15 M08
+G96 S1100 (constant surface speed)
+G01 Z0. F.005 (we love a pretty face)
+G01 X-.062
+G00 Z.15
+G28 U0 M09
+G28 W0
+M01 (Check the facing)
+
+
+    (roughing pass)
+G28 G00 U0 W0
+T101 (tool 1: 80 deg .031TNR)
+G50 S3000
+G97 S1000 M03
+G00 G54 Z.15
+G00 X2.5 Z.15 M08
+G96 S1100
+G71 P100 Q100 U.01 W.005 D.025 F.012
+N100 G00 X.972 Z.15
+G01 X1.23 Z-.05
+G01 X1.23 Z-.55
+G02 X1.43 Z-.65 R.1
+G01 X1.774 Z-.65
+G01 X1.90 Z-.74
+G01 X1.90 Z-1.25
+G02 X2.1 Z-1.35 R.1
+G01 X2.185 Z-1.35
+G01 X2.25 Z-1.42
+G01 X2.25 Z-2.75
+G01 X2.50 Z-2.75
+N200 G00 X2.55 Z-2.75 G40
+
+G28 U0 M09
+G28 W0
+M01 (check the roughing pass)
+
+    (finishing pass)
+    G28 G00 U0 W0
+T303(tool 3, 35 deg .15 TNR)
+G50 S3000
+G97 S1000 M03
+G00 G54 Z.15
+G00 X2.5 M08
+G96 S1100
+G70 P100 Q200 F.005
+G28 U0 M09
+G28 W0
+M30
+%

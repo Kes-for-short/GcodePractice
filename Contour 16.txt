@@ -64,6 +64,7 @@ G00 Z2. M09
 G28 G91 Z0 M05 
 G28 G91 Y0
 
+
 		(.63 slot roughing)
 G90 G80 G40 G20
 M6 T2
@@ -111,68 +112,66 @@ G28 G91 Z0 M05
 G28 G91 Y0
 
 
-		(Center slot First Finnish pass)
+		(.63 slot First Finnish pass)
 G90 G80 G40 G20
 M06 T5
-M1			(Check The Tool and Inspect slot)
+M01			(Check The Tool and Inspect slot)
 			(Tool #5: 3/16 Inch Flat Endmill, 3 Flute)
 M03 S6112		(3.82 * 300 sfm  / dia Tool)
-G00 G90 G54 X1.625 Y1.125
+G00 G90 G54 X1.75 Y1.45
 G43 Z2. H05
 G00 Z.1 M08
 G01 Z-.125 F17.19
-G01 G41 D05 X1.74 F34.38	(start position of Finishing pass)
-G03 X1.94 Y1.125 J.2		(CCW arc up To right wall of slot)
-G01 Y1.75					(linear move up To Top arc of slot)
-G03 X1.31 I-.315			(CCW arc on Top of slot)
-G01 Y.5						(linear cut along left side of slot)
-G03 X1.94 I.315				(CCW arc on bottom of slow)
-G01 Y1.125					(linear cut up right side of slot To center)
-G03 X1.74 Y1.325 I-.2		(CCW arc away From side of slot)
-G01 G40 X1.625 Y1.325		(end point of First Finish pass)
+G01 G41 D05 X1.635 Y1.45 F34.38	(start position of finishing pass)
+G03 X1.435 Y1.25 J-.2			(CCW arc up to left wall of slot)
+G01 Y0.625						(linear move up to bottom arc of slot)
+G03 X2.065 I.315				(CCW arc on bottom of slot)
+G01 Y1.875						(linear cut along right side of slot)
+G03 X1.435 I-.315				(CCW arc on top of slot)
+G01 Y1.25						(linear cut up right side of slot To center)
+G03 X1.635 Y1.05 I.2			(CCW arc away From side of slot)
+G01 G40 X1.75 Y1.45				(end point of first finish pass)
 G01 Z.1
 
-		(Center slot second Finnish pass)
-G00 X1.625 Y1.125	
+		(.63 slot second Finnish pass)
 G01 Z-.25 F17.19
-G01 G41 D05 X1.74 F34.38	(start position of Finishing pass)
-G03 X1.94 Y1.125 J.2		(CCW arc up To right wall of slot)
-G01 Y1.75					(linear move up To Top arc of slot)
-G03 X1.31 I-.315			(CCW arc on Top of slot)
-G01 Y.5						(linear cut along left side of slot)
-G03 X1.94 I.315				(CCW arc on bottom of slow)
-G01 Y1.125					(linear cut up right side of slot To center)
-G03 X1.74 Y1.325 I-.2		(CCW arc away From side of slot)
-G01 G40 X1.625 Y1.325		(end point of second Finish pass)
+G01 G41 D05 X1.635 Y1.45 F34.38	(start position of finishing pass)
+G03 X1.435 Y1.25 J-.2			(CCW arc up to left wall of slot)
+G01 Y0.625						(linear move up to bottom arc of slot)
+G03 X2.065 I.315				(CCW arc on bottom of slot)
+G01 Y1.875						(linear cut along right side of slot)
+G03 X1.435 I-.315				(CCW arc on top of slot)
+G01 Y1.25						(linear cut up right side of slot To center)
+G03 X1.635 Y1.05 I.2			(CCW arc away From side of slot)
+G01 G40 X1.75 Y1.45				(end point of first finish pass)
 G01 Z.1
 
-G00 X1.625 Y1.75 	(center of Top arc)
+
+G00 X1.75 Y1.875 				(center of Top arc)
 G01 Z-.25 F17.19
-G01 Y.5	F34.38		(center of bottom arc)
+G01 Y.625						(center of bottom arc)
 G01 Z.1
 
 		(left slot first Finnish pass)
 G90 G80 G40 G20
-M06 T5
-M1 (Check The Tool and inspect slot)
-		(Tool #4: 1/4 Inch Flat Endmill, 3 Flute)
-M03 S4584		(3.82 * 300 sfm /.25 dia Tool)
-G00 G90 G54 X.88 Y1.25
+M06 T05
+M01			(Check The Tool and Inspect slot)
+			(Tool #5: .1875 Inch Flat Endmill, 3 Flute)
+M03 S6112		(3.82 * 300 sfm  / dia Tool)
+G00 G90 G54 X.88 Y1.27
 G43 Z2. H05
 G00 Z.1 M08
 G01 Z-.125 F17.19
-
-G01 G41 D04 X1.74 F34.38	(start position of finishing pass)
-G03 X1.94 Y1.125 J.2	(CCW arc up to right wall of slot)
-G01 Y1.75		(linear move up to Top arc of slot)
-G03 X1.31 I-.315	(CCW arc on Top of slot)
-G01 Y.5			(linear cut along left side of slot)
-G03 X1.94 I.315		(CCW arc on bottom of slow)
-G01 Y1.125		(linear cut up right side of slot to center)
-G03 X1.74 Y1.325 I-.2	(CCW arc away From side of slot)
-G01 G40 X1.625 Y1.325	(end point of First Finish pass)
+G01 G41 D05 X.7435 Y1.27 F34.38	(start position of finishing pass)
+G03 X.7235 Y1.25 J-.02			(CCW arc up to left wall of slot)
+G01 Y0.625						(linear move up to bottom arc of slot)
+G03 X2.065 I.315				(CCW arc on bottom of slot)
+G01 Y1.875						(linear cut along right side of slot)
+G03 X1.435 I-.315				(CCW arc on top of slot)
+G01 Y1.25						(linear cut up right side of slot To center)
+G03 X1.635 Y1.05 I.2			(CCW arc away From side of slot)
+G01 G40 X1.75 Y1.45				(end point of first finish pass)
 G01 Z.1
-
 
 M30
 %

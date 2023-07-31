@@ -1,5 +1,5 @@
 %
-O0001 (lathe project 1, Kimberly Elise Shelton)
+O0001 (lathe project 1.5, Kimberly Elise Shelton)
 (tool 1: 80 deg .031TNR)
 (tool 3, 35 deg .15 TNR)
 
@@ -31,15 +31,16 @@ G00 X2.5 Z.15 (sp)
 M08
 G96 S1100 (constant surface speed on)
 G71 P100 Q200 U.01 W.005 D.025 F.012
-N100 G00 X1.6 Z.15 (p1)
-G01 X1.6 Z.1 G42
-G01 X1.6 Z-.5
-G01 X1.8 Z-.5
-G01 X1.8 Z-.75
-G01 X2. Z-.75
-G01 X2. Z-1.
-G01 X2.5 Z-1.
-N100 G00 X2.6 Z-1. G40
+N100 G00 X.92 Z.15 (p1)
+G01 X.92 Z.1 G42
+G01 X.92 Z-.45
+G01 X1.4 Z-.45
+G01 X1.4 Z-.85
+G01 X2.1 Z-.85
+G01 X2.1 Z-1.1
+G01 X2.35 Z-1.1
+G01 X2.35 Z-2.1
+N100 G00 X2.6 G40
 G28 U0 M09
 G28 W0
 M1 (check the rough)
